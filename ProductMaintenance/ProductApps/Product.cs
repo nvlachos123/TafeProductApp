@@ -14,6 +14,7 @@ namespace ProductApps
         private decimal delivery;
         private decimal wrapping;
         private decimal gst;
+        private decimal deliveryCharge = 25;
 
         private decimal Price
         {
@@ -63,7 +64,7 @@ namespace ProductApps
         //Calculate the total payment
         public void calTotalPayment()
         {
-            TotalPayment = Price * Quantity;
+            TotalPayment = Price * Quantity + deliveryCharge;
         }
     }
 }
