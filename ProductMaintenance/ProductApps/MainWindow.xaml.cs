@@ -24,6 +24,7 @@ namespace ProductApps
 
         private decimal deliveryCharge = 25;
         private decimal wrapCharge = 5;
+        private decimal gstRate = 1.1m;
 
         public MainWindow()
         {
@@ -41,6 +42,8 @@ namespace ProductApps
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + deliveryCharge);
 
                 totalChargeWithWrapTextBox.Text = Convert.ToString(cProduct.TotalPayment + deliveryCharge + wrapCharge);
+
+                totalChargeAfterGST.Text = Convert.ToString((cProduct.TotalPayment + deliveryCharge + wrapCharge) * gstRate);
             }
             catch (FormatException)
             {
