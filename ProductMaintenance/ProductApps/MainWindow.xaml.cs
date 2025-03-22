@@ -23,6 +23,7 @@ namespace ProductApps
         Product cProduct;
 
         private decimal deliveryCharge = 25;
+        private decimal wrapCharge = 5;
 
         public MainWindow()
         {
@@ -36,7 +37,10 @@ namespace ProductApps
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
+
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + deliveryCharge);
+
+                totalChargeWithWrapTextBox.Text = Convert.ToString(cProduct.TotalPayment + deliveryCharge + wrapCharge);
             }
             catch (FormatException)
             {
